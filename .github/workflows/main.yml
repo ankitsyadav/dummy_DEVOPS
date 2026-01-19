@@ -3,13 +3,26 @@ name: Simple CI Pipeline
 on: [push]
 
 jobs: 
-  build:
+  create-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 
+      
       - uses: actions/setup-node@v4
         with: 
          node-version: 22
-      - run: npm i
-      - run: npm run build
+
+      - name: "Install Dependencies and Build"
+        run: npm i
+
+      - name: "Create Build"
+        run: npm run build
   
+# ankit ankitankit
+
+#       ankit amnkoit lmsdsdsbdfjsdf

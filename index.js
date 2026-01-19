@@ -3,8 +3,8 @@ const express= require("express");
 const app=express();
 
 // server.js
-app.get("/health", (req, res) => {
-  res.send("OK");
+app.get("/",(req,res)=>{
+    res.send("Hello World!");
 });
 
 // jalwa ankit ankit

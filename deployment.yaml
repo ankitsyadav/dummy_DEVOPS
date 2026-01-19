@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dockerminikubelearn
+  name: dockerminikubelearn
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dockerminikubelearn
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: dockerminikubelearn
+    spec:
+      containers:
+      - image: ankitsyadavchatak/dockerminikubelearn:1.0
+        name: dockerminikubelearn
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
